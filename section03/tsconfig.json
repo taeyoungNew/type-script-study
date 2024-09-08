@@ -104,5 +104,22 @@
     /* Completeness */
     // "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
     "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
-  }
+  },
+  "include": [  // 어떤 파일을 컴파일 할지 명시적으로 설정
+    "watchMode.ts"
+  ],
+  // exclude : 전체 컴파일대상군에서 제외할 TS파일을 설정
+  "exclude": [
+    "**/compiler.ts",
+    // "tmp/compiler.ts", // root dir를 기준으로 제외대상으로 인식한다. 
+    // **/compiler.ts 어떤 폴더에 있더라도 컴파일대상에서 제외하고 싶다면 **/compiler.ts로 설정을 하면 된다.
+    "*.spec.ts", // * : 임의 .spec.ts는 모드 컴파일대상에서 제외된다.
+    "node_modules"  // npm으로 인스톨된 패키지들이 node_modules안에 들어간다.
+  ],
+  // exclude안에 정의된 파일도 files에 정의 되어있으면 JS로 커마일이 가능하다
+  "files": [  // *는 못쓰고 절대경로와 상대경로만 써야한다.
+    "tmp/compiler.ts"
+  ]
+
 }
+
