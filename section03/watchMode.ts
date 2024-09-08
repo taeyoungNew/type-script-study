@@ -7,3 +7,6 @@ let ex = 12312422;
 function consoleLog(ex: number): void {
     console.log(ex)
 }
+
+let complier2: string = "awds";
+console.log(complier2);
