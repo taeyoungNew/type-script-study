@@ -10,3 +10,4 @@ function consoleLog(ex) {
 }
 let complier2 = "awds";
 console.log(complier2);
+//# sourceMappingURL=watchMode.js.map
