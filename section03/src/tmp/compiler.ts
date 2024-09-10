@@ -18,6 +18,19 @@ function add(n1: number, n2: number): number {
     return n1 + n2;
 }
 
+//"strictNullChecks": trueに設定したら下の四つのコードはすべてエラーになる
+// let nullAble: string = null;
+// let undefinedAble: string = undefined;
+// let onlyNull: null = undefined;
+// let onlyUndefined: undefined = null;
+
+
+
 // "noEmitOnError" : trueと設定すると
 //　エラーが起きた場合JSにコンパイルされない
-add(hi, 12)
+// add(hi, 12)
+
+// "noImplicitAny": true =>　暗黙的なanyはエラーを起こす
+function echo(mess: string) {
+    return mess;
+}
