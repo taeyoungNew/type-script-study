@@ -11,5 +11,6 @@
 // 컴파일을 하면 var타입은 안나오고 let const로 컴파일이 된다. 
 // 하지만 tsc index.ts와 같이 하게되면 tsconfig.json은 적용되지 않아 
 // 예날의 JS의 문법으로 바뀐다. 
+let hi: string = "hi";
 console.log("compile")
-console.log("files확인")
+console.log(hi.toUpperCase())
