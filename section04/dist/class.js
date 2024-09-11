@@ -1,17 +1,17 @@
 "use strict";
 // 基本的にクラスの名前は頭文字を大文字にする
 // クラスは型にできる
-// JSではprivateをどう使う？
-// ES2022でprivateフィールドが追加され
-// フィールドの前に#を付け加えることでprivateフィールドとして使える
-class Person {
-    // Objectが作成する時に実行される関数である
-    constructor(initName, initAge) {
-        // thisとはクラスのフィールドが格納されたもの
-        this.name = initName;
-        this.age = initAge;
+class Person1 {
+    // constructorの省略法
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+        this.id = 32;
+        // readonly修飾子が付いてたとしてもコンストラクタの中では書き換えることができる
+        this.id = 32323;
     }
     incrementAge() {
+        // readonlyとは文字通り読むだけ
         this.age += 1;
     }
     // パラメータにthis: {name: string }を作成することで
@@ -21,20 +21,11 @@ class Person {
         console.log(`Hello My name is ${this.name}. I am ${this.age} old`);
     }
 }
-let person2 = new Person("クラス型で宣言", 31);
+let person2 = new Person1("クラス型で宣言", 31);
 person2.incrementAge();
 person2.greeting();
-// Property 'age' is private and only accessible within class 'Person'
-// person2.age = 2;
-const person = new Person("テヨン", 23);
+// nameはreadonly修飾子が付いているので修正することはできない
+// Cannot assign to 'name' because it is a read-only property.
+// person2.name = "新しい名前"
+const person = new Person1("テヨン", 23);
 person.greeting();
-// console.log("person = ",　person)
-// const anotherName = {
-//     name: "anotherName",
-//     // thisは実行した場所に依存している、つまりどこで使われるかによって変わる
-//     anotherGreeting: person.greeting
-// }
-// // クラスの中のthis.はフィールドを参照するけど
-// // anotherGreetingの中のthisはahotherNameというObjectを示している
-// // つまりthisは定義された時ではなく呼び出された時決まる
-// anotherName.anotherGreeting();
