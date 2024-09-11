@@ -3,21 +3,28 @@
 class Person {
     // Objectが作成する時に実行される関数である
     constructor(initName) {
+        // パラメータにthis: {name: string }を作成することで
+        // objectとかで参照する時thisはその位置のnameを指すこととなる
+        // greeting(this: {name: string}) {
+        //     console.log(`Hello My name is ${this.name}`)
+        // }
+        this.greeting = () => {
+            console.log(`Hello My name is ${this.name}`);
+        };
         // thisとはクラスのフィールドが格納されたもの
         this.name = initName;
     }
-    greeting() {
-        console.log(`Hello My name is ${this.name}`);
-    }
 }
 const person = new Person("テヨン");
+// 
 person.greeting();
-console.log(person);
+// console.log("person = ",　person)
 const anotherName = {
     name: "anotherName",
+    // thisは実行した場所に依存している、つまりどこで使われるかによって変わる
     anotherGreeting: person.greeting
 };
 // クラスの中のthis.はフィールドを参照するけど
 // anotherGreetingの中のthisはahotherNameというObjectを示している
-// undefined
+// つまりthisは定義された時ではなく呼び出された時決まる
 anotherName.anotherGreeting();
