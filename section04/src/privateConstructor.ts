@@ -56,4 +56,6 @@ class Teacher6 extends Person6 {
 }
 // priavte constructorのため下のコードはエラーとなる
 // const teacher6 = new Teacher6("teayeon", 20, "Math");
-
+const teacher6 =  Teacher6.getInstance();
+const teacher62 = Teacher6.getInstance()
+console.log(teacher6, teacher62)
