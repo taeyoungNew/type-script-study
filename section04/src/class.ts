@@ -10,18 +10,31 @@ class Person {
         this.name = initName;
     }
 
-    greeting() {
+    // パラメータにthis: {name: string }を作成することで
+    // objectとかで参照する時thisはその位置のnameを指すこととなる
+    // 普通の関数は呼び出された時に決まる
+    greeting(this: {name: string}) {
         console.log(`Hello My name is ${this.name}`)
     }
+
+    // arrow関数の場合は定義時に決まるので
+    // 外のobjectから呼び出した場合でもクラスの中に定義されている
+    // テヨンというデータが出力される
+    // つまりarrow関数はthisをパラメータとして受け入れない
+    // greeting = (this: {name: string}) => {　// エラー
+    //     console.log(`Hello My name is ${this.name}`)
+    // }
 }
 
 const person = new Person("テヨン");
 
+// 
 person.greeting();
-console.log(person)
+// console.log("person = ",　person)
 
 const anotherName = {
     name: "anotherName",
+    // thisは実行した場所に依存している、つまりどこで使われるかによって変わる
     anotherGreeting: person.greeting
 }
 
