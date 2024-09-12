@@ -1,11 +1,18 @@
 "use strict";
-// type guard
+// type guard + tag union
 class Dog {
+    constructor() {
+        // tag union
+        this.kind = "dog";
+    }
     speak() {
         console.log("bow-wow");
     }
 }
 class Bird {
+    constructor() {
+        this.kind = "bird";
+    }
     speak() {
         console.log("tweet-tweet");
     }
@@ -14,6 +21,13 @@ class Bird {
     }
 }
 function havePet(pet) {
+    // タグをつけることによって判別できるようにする
+    switch (pet.kind) {
+        case "bird":
+            pet.fly();
+        case "dog":
+            pet.speak();
+    }
     pet.speak();
     // is pet instanceof Bird?
     // petはBirdから生成されたインスタンスなのか？
@@ -21,7 +35,7 @@ function havePet(pet) {
         pet.fly();
     }
 }
-havePet(new Bird);
+havePet(new Bird());
 function toUpperCase(x) {
     if (typeof x === "string") {
         return x.toUpperCase();
