@@ -20,7 +20,7 @@ class Developer4 implements Human4 {
 }
 
 
-// つまり制限がゆるに型に対して制限が厳しい型を入れられる
+// つまり制限がゆるい型に対して制限が厳しい型を入れられる
 const user4: Human4= new Developer4("TYTY", 23, 4);
 
 const develop = {
