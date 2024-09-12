@@ -1,0 +1,8 @@
+"use strict";
+// type assertion 
+// 手動で型を上書きする方法が二つある
+const input = document.getElementById("input");
+// OR
+const input2 = document.getElementById("input");
+input.value = "inital input value";
+// (document.getElementById("input") as HTMLInputElement).value = "inital input value"
