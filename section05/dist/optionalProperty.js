@@ -1,8 +1,11 @@
 "use strict";
 // typeもinterfaceも全部複数に継承できる
 class Developer8 {
-    constructor(name) {
-        this.name = name;
+    constructor(_name) {
+        this._name = _name;
+        if (_name) {
+            this.name = _name;
+        }
     }
     // パラメータにもOptionalにできるけど
     // そのOptionalをそのまま戻り値には使えない
@@ -14,6 +17,6 @@ class Developer8 {
     }
 }
 // nickNameがなくてもエラーが起きない
-const nameble = {
-    name: "TYTy"
-};
+// const nameble: Nameble = {
+//     name: "TYTy"
+// }
