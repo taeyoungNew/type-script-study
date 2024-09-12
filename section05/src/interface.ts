@@ -39,7 +39,7 @@ interface inter {
 const interHuman: inter = {
     name: "TY",
     age: 123,
-    greeting(param: string): void {
+    greeting: (param: string): void => {
         console.log(param)
     }
 }
