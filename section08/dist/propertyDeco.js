@@ -13,6 +13,12 @@ function proLogging4(target, propertyKey) {
     console.log(target);
     console.log(propertyKey);
 }
+function funcDeco4(target, propertyKey, descriptor) {
+    console.log('method logging');
+    console.log(target);
+    console.log(propertyKey);
+    console.log(descriptor);
+}
 class User4 {
     constructor(age) {
         this.age = age;
@@ -26,3 +32,6 @@ class User4 {
 __decorate([
     proLogging4
 ], User4.prototype, "name4", void 0);
+__decorate([
+    funcDeco4
+], User4.prototype, "greeting", null);

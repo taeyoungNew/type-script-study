@@ -4,9 +4,14 @@
 function proLogging4(target: any, propertyKey: string) {
     console.log('property logging')
     console.log(target);
-    console.log(propertyKey);
-    
-    
+    console.log(propertyKey) 
+}
+
+function funcDeco4(target: any, propertyKey: string, descriptor: PropertyDescriptor) {
+    console.log('method logging')
+    console.log(target);
+    console.log(propertyKey) 
+    console.log(descriptor);
     
 }
 
@@ -17,6 +22,7 @@ class User4 {
         console.log("User was created")
     }
 
+    @funcDeco4
     greeting() {
         console.log("hello");
         
