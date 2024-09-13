@@ -1,6 +1,6 @@
 // how to decoration class
 // クラスをデコレーションしてみよう
-//　クラスを違うものにする
+//クラスを違うものにする
 function Logging3(msg: string) {
     return function (constructor: Function) {
     }
