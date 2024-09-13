@@ -13,4 +13,4 @@ function copy3<T extends { name: string }, U extends keyof T>(value: T, key: U):
     return value
 }
 
-copy({ name: "taki", age: 39})
+copy3({ name: "taki", age: 39}, "name")
