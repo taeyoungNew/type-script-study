@@ -1,7 +1,13 @@
-import { Foodalbe } from "./interfaces.js";
+// import { Foodalbe } from "./interfaces.js";
+// import { Foods as FoodList } from "./foods.js"; // 별칭붙이기
+import * as Interfaces from "./interfaces.js" // * 전부가져오기
 import { Foods } from "./foods.js";
 import { Score } from "./score.js";
-export class Food implements Foodalbe {
+// Type-Only imports // 타입으로만 가져온다는 뜻 
+
+// export default로 export하면 다른 파일에서 불러올때 {}를 쓰지않고
+// 이름을 임의로 해도된다.
+export class Food implements Interfaces.Foodalbe {
     foods = Foods.getInstance
     constructor(public element: HTMLDivElement) {
         console.log("Food")
