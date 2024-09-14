@@ -8,6 +8,7 @@ import { Score } from "./score.js";
 // export default로 export하면 다른 파일에서 불러올때 {}를 쓰지않고
 // 이름을 임의로 해도된다.
 export class Food implements Interfaces.Foodalbe {
+    
     foods = Foods.getInstance
     constructor(public element: HTMLDivElement) {
         console.log("Food")
