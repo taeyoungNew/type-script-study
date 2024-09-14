@@ -90,7 +90,7 @@ class Foods implements Foodsalbe {
     get activeElsScore() {
         this._activeElsScore = []
         this.activeEls.forEach(el => {
-            const foodScore = el.querySelector('.food__score')
+            const foodScore = el.querySelector<HTMLDivElement>('.food__score')
             if (foodScore) {
                 this._activeElsScore.push(Number(foodScore.textContent))
             }
