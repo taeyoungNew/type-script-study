@@ -4,10 +4,12 @@ const path = require("path") // commonJS형식
 
 // nodeJS
 module.exports = {
+    mode: "production",
     entry: "./src/main.ts", // 처음 실행되는 파일명
     output: {
         filename: "bundle.js",
-        path: path.resolve(__dirname, "dist") // bundle된 파일들을 저장하는 경로 절대경로ㅊㅇ .
+        path: path.resolve(__dirname, "dist"), // bundle된 파일들을 저장하는 경로 절대경로ㅊㅇ .
+        publicPath: "/dist/"
     },
     devtool: "inline-source-map", // webpack에 source map 만들기
     module: {   // webpack에서 
