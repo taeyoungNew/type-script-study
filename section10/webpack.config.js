@@ -1,7 +1,6 @@
 // console.log(__dirname);
 // nodeJS에 내장되어있는 path
 const path = require("path") // commonJS형식
-const { Extension } = require("typescript")
 
 // nodeJS
 module.exports = {
