@@ -9,7 +9,12 @@
   <link rel="stylesheet" href="style.css">
   <!-- type='module' : Edge, Chrome -->
   <!-- defer속성 : HTML을 읽고나서 JS를 읽는다는 뜻 -->
-  <script type="module" src="dist/main.js" defer></script>
+  <!-- <script type="module" src="dist/main.js" defer></script> -->
+
+  <!-- webpack을 사용하면 bundle의 경로를 쓰고
+    type="module"을 사용안해도된다. -->
+  <!-- difer는 잊지말것 -->
+  <script src="./dist/bundle.js" defer></script>
   <!-- 옛날 방식 -->
   <!-- <script src="dist/interfaces.js" defer></script>
   <script src="dist/main.js" defer></script>
