@@ -1,5 +1,5 @@
-import { Foodsalbe } from "./interfaces.js"; // esmodule
-import { Food } from "./food.js";
+import { Foodsalbe } from "./interfaces"; // esmodule
+import { Food } from "./food";
 
 export class Foods implements Foodsalbe {
 
