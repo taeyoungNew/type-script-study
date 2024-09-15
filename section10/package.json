@@ -6,10 +6,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "devDependencies": {
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.6.2",
     "webpack": "^5.94.0",
     "webpack-cli": "^5.1.4"
   },
-
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack"

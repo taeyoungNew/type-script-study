@@ -1,7 +1,5 @@
-import { Scoreable } from "./interfaces.js";
-import { Foods } from "./foods.js";
-
-hello
+import { Scoreable } from "./interfaces";
+import { Foods } from "./foods";
 
 export class Score implements Scoreable {
 
