@@ -2,7 +2,7 @@ const path = require("path")
 
 module.exports = {
     mode: "production", // 개발용 모드 bunle.js의 내용이 다르게 보인다
-    entry: "./src/test.ts", // 제일먼저 시작하는 파일 
+    entry: "./src/libray.ts", // 제일먼저 시작하는 파일 
     output: {
         filename: "bundle.js", // 컴파일될때 압축된 JS코드를 넣는 파일을 설정
         path: path.resolve(__dirname, "dist"),

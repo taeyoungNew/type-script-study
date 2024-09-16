@@ -1,6 +1,8 @@
 // console.log(__dirname);
 // nodeJS에 내장되어있는 path
 const path = require("path") // commonJS형식
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+
 
 // nodeJS
 module.exports = {
@@ -24,5 +26,9 @@ module.exports = {
             ".ts",
             ".js"
         ]
-    }
+    },
+    Plugin: [
+        // npm run build를 하면 dist 폴더안에 있는 불필요한 JS파일은 사라진다
+        new CleanWebpackPlugin()
+    ]
 } 
