@@ -23,5 +23,9 @@
   "dependencies": {
     "axios": "^1.7.7",
     "lodash": "^4.17.21"
-  }
+  },
+  "files": [
+    "./src/library.ts",
+    "./src/lodash.ts"
+  ]
 }
